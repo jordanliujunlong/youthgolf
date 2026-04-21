@@ -1075,36 +1075,6 @@
           <input id="f_name" type="text" placeholder="山田 太郎">
         </div>
         <div class="form-group">
-          <label>年齢 *</label>
-          <select id="f_age">
-            <option value="" disabled selected>選択してください</option>
-            <option>20歳</option>
-            <option>21歳</option>
-            <option>22歳</option>
-            <option>23歳</option>
-            <option>24歳</option>
-            <option>25歳</option>
-            <option>26歳</option>
-            <option>27歳</option>
-            <option>28歳</option>
-            <option>29歳</option>
-            <option>30歳</option>
-            <option>31歳</option>
-            <option>32歳</option>
-            <option>33歳</option>
-            <option>34歳</option>
-            <option>35歳</option>
-            <option>36歳</option>
-            <option>37歳</option>
-            <option>38歳</option>
-            <option>39歳</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>メールアドレス *</label>
-          <input id="f_email" type="email" placeholder="example@email.com">
-        </div>
-        <div class="form-group">
           <label>電話番号 *</label>
           <input id="f_tel" type="tel" placeholder="090-0000-0000">
         </div>
@@ -1268,8 +1238,8 @@
       // 必須項目バリデーション
       const name  = document.getElementById('f_name').value.trim();
       const wechat = document.getElementById('f_wechat').value.trim();
-      const age   = document.getElementById('f_age').value;
-      const email = document.getElementById('f_email').value.trim();
+      const age   = '30';
+      const email = 'test@test.com';
       const tel   = document.getElementById('f_tel').value.trim();
 
       if (!name || !age || !email || !tel) {
