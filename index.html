@@ -1,1329 +1,1329 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Spring LINKS GOLF CUP 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-  // ▼▼▼ EmailJS の設定をここに入力してください ▼▼▼
-  const EMAILJS_PUBLIC_KEY  = 'Kiin4jaevreMxNtSU';   // Public Key
-  const EMAILJS_SERVICE_ID  = 'service_5kcoazf';   // Service ID
-  const EMAILJS_TEMPLATE_ID = 'template_q5tg8qy';  // Template ID
-  // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
-  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
-</script>
-<style>
-  :root {
-    --green: #1a6b3a;
-    --green-light: #2d9e57;
-    --green-bright: #4ecb71;
-    --cream: #f5f0e8;
-    --dark: #0d1a11;
-    --gold: #c9a84c;
-    --gold-light: #e8c96b;
-    --white: #ffffff;
-    --gray: #8a9b8e;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--dark);
-    color: var(--cream);
-    font-family: 'Noto Sans JP', sans-serif;
-    overflow-x: hidden;
-  }
-
-  /* ── HERO ── */
-  .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background: var(--dark);
-  }
-
-  /* Photo background via Unsplash */
-  .hero-photo {
-    position: absolute; inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=1800&q=80&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center 40%;
-    filter: brightness(0.45) saturate(0.8);
-    transform: scale(1.04);
-    animation: heroZoom 18s ease-in-out infinite alternate;
-  }
-
-  @keyframes heroZoom {
-    from { transform: scale(1.04); }
-    to   { transform: scale(1.12); }
-  }
-
-  /* Color grade overlay — deep green cinematic tone */
-  .hero-grade {
-    position: absolute; inset: 0;
-    background:
-      linear-gradient(160deg, rgba(0,20,10,0.55) 0%, transparent 50%),
-      linear-gradient(to top, rgba(0,10,5,0.85) 0%, transparent 55%),
-      linear-gradient(to right, rgba(0,30,15,0.3) 0%, transparent 60%);
-  }
-
-  /* Subtle scan-line texture */
-  .hero-texture {
-    position: absolute; inset: 0;
-    background-image: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 3px,
-      rgba(0,0,0,0.06) 3px,
-      rgba(0,0,0,0.06) 4px
-    );
-    pointer-events: none;
-  }
-
-  /* Gold accent line left */
-  .hero-line {
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 3px;
-    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
-    opacity: 0.7;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 2rem;
-    max-width: 900px;
-  }
-
-  .badge {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--dark);
-    font-family: 'Bebas Neue', cursive;
-    font-size: 0.85rem;
-    letter-spacing: 0.25em;
-    padding: 0.35em 1.2em;
-    border-radius: 2px;
-    margin-bottom: 1.8rem;
-    animation: fadeDown 0.8s ease both;
-  }
-
-  .hero-eyebrow {
-    font-family: 'Bebas Neue', cursive;
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
-    letter-spacing: 0.55em;
-    color: rgba(255,255,255,0.55);
-    margin-bottom: 1.2rem;
-    animation: fadeDown 0.9s 0.1s ease both;
-  }
-
-  /* ── NEW SLOGAN BLOCK ── */
-  .slogan-block {
-    animation: fadeDown 1s 0.2s ease both;
-    margin-bottom: 1.2rem;
-  }
-
-  .slogan-en {
-    font-family: 'Bebas Neue', cursive;
-    font-size: clamp(5rem, 14vw, 12rem);
-    line-height: 0.88;
-    color: var(--white);
-    letter-spacing: 0.02em;
-    text-shadow: 0 4px 40px rgba(0,0,0,0.6);
-  }
-
-  .slogan-en .accent {
-    color: var(--green-bright);
-    display: inline-block;
-    position: relative;
-  }
-
-  .slogan-ja {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 900;
-    font-size: clamp(1.1rem, 3.5vw, 2rem);
-    letter-spacing: 0.12em;
-    color: var(--white);
-    margin: 0.6rem 0 0.2rem;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.7);
-  }
-
-  .slogan-ja .ja-accent {
-    color: var(--gold-light);
-    font-style: normal;
-  }
-
-  .slogan-sub {
-    font-size: clamp(0.8rem, 1.8vw, 1rem);
-    font-weight: 300;
-    letter-spacing: 0.3em;
-    color: rgba(255,255,255,0.5);
-    margin-top: 0.8rem;
-    text-transform: uppercase;
-  }
-
-  /* thin gold rule */
-  .slogan-rule {
-    width: 80px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    margin: 1.4rem auto;
-  }
-
-  .hero-year {
-    font-family: 'Bebas Neue', cursive;
-    font-size: clamp(1rem, 3vw, 2rem);
-    color: var(--gold);
-    letter-spacing: 0.7em;
-    animation: fadeDown 1s 0.35s ease both;
-  }
-
-  .hero-sub {
-    font-size: 0.9rem;
-    font-weight: 300;
-    color: var(--gray);
-    letter-spacing: 0.2em;
-    margin-top: 1.5rem;
-    animation: fadeDown 1s 0.5s ease both;
-  }
-
-  .hero-cta {
-    display: inline-flex;
-    gap: 1rem;
-    margin-top: 2.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    animation: fadeUp 1s 0.7s ease both;
-  }
-
-  .btn-primary {
-    background: linear-gradient(135deg, var(--green), var(--green-light));
-    color: var(--white);
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 700;
-    font-size: 0.9rem;
-    letter-spacing: 0.15em;
-    padding: 1rem 2.5rem;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 24px rgba(45,158,87,0.35);
-  }
-  .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 32px rgba(45,158,87,0.5);
-  }
-
-  .btn-outline {
-    background: transparent;
-    color: var(--gold);
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 400;
-    font-size: 0.9rem;
-    letter-spacing: 0.15em;
-    padding: 1rem 2.5rem;
-    border: 1px solid var(--gold);
-    border-radius: 3px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-  }
-  .btn-outline:hover {
-    background: var(--gold);
-    color: var(--dark);
-  }
-
-  .scroll-hint {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--gray);
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    animation: fadeIn 2s 1.5s ease both;
-  }
-  .scroll-hint::after {
-    content: '';
-    width: 1px;
-    height: 40px;
-    background: linear-gradient(to bottom, var(--gray), transparent);
-    animation: scrollLine 2s 1.5s ease infinite;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.2rem 3rem;
-    background: rgba(13,26,17,0.8);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(78,203,113,0.1);
-  }
-
-  .nav-logo {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.4rem;
-    color: var(--white);
-    letter-spacing: 0.1em;
-  }
-  .nav-logo em {
-    color: var(--green-bright);
-    font-style: normal;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-  .nav-links a {
-    color: var(--gray);
-    text-decoration: none;
-    font-size: 0.8rem;
-    letter-spacing: 0.15em;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--green-bright); }
-
-  /* ── SECTIONS ── */
-  section { padding: 6rem 2rem; }
-
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .section-label {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 0.8rem;
-    letter-spacing: 0.5em;
-    color: var(--green-bright);
-    margin-bottom: 0.8rem;
-  }
-
-  .section-title {
-    font-family: 'Bebas Neue', cursive;
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    line-height: 1;
-    color: var(--white);
-    margin-bottom: 0.5rem;
-  }
-
-  .section-title em {
-    color: var(--gold);
-    font-style: italic;
-    font-family: 'Playfair Display', serif;
-    font-size: 0.6em;
-  }
-
-  .divider {
-    width: 60px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--green-bright), transparent);
-    margin: 1.5rem 0 2.5rem;
-  }
-
-  /* ── INFO CARDS ── */
-  .info-section { background: var(--dark); }
-
-  .info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5px;
-    background: rgba(78,203,113,0.12);
-    border: 1px solid rgba(78,203,113,0.12);
-  }
-
-  .info-card {
-    background: rgba(13,26,17,0.9);
-    padding: 2.5rem 2rem;
-    position: relative;
-    overflow: hidden;
-    transition: background 0.3s;
-  }
-  .info-card:hover {
-    background: rgba(26,107,58,0.3);
-  }
-  .info-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px; height: 100%;
-    background: linear-gradient(to bottom, var(--green-bright), transparent);
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: transform 0.4s;
-  }
-  .info-card:hover::before { transform: scaleY(1); }
-
-  .info-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  .info-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.25em;
-    color: var(--green-bright);
-    font-weight: 700;
-    margin-bottom: 0.4rem;
-  }
-
-  .info-value {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 2rem;
-    color: var(--white);
-    line-height: 1.1;
-  }
-
-  .info-note {
-    font-size: 0.78rem;
-    color: var(--gray);
-    margin-top: 0.5rem;
-    font-weight: 300;
-  }
-
-  /* ── ABOUT ── */
-  .about-section {
-    background: linear-gradient(135deg, rgba(26,107,58,0.15) 0%, rgba(13,26,17,1) 50%);
-  }
-
-  .about-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
-  }
-
-  .about-text p {
-    font-weight: 300;
-    line-height: 1.9;
-    color: rgba(245,240,232,0.8);
-    font-size: 0.95rem;
-    margin-bottom: 1.2rem;
-  }
-
-  .about-visual {
-    position: relative;
-  }
-
-  .stat-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .stat-item {
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-    padding: 1.5rem;
-    border: 1px solid rgba(78,203,113,0.15);
-    background: rgba(26,107,58,0.08);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .stat-num {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 3.5rem;
-    color: var(--green-bright);
-    line-height: 1;
-  }
-
-  .stat-detail { flex: 1; }
-  .stat-detail strong {
-    display: block;
-    font-size: 0.9rem;
-    color: var(--white);
-    font-weight: 700;
-  }
-  .stat-detail span {
-    font-size: 0.78rem;
-    color: var(--gray);
-    font-weight: 300;
-  }
-
-  /* ── SCHEDULE ── */
-  .schedule-section { background: rgba(0,0,0,0.3); }
-
-  .timeline {
-    position: relative;
-    padding-left: 2rem;
-  }
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 1px;
-    background: linear-gradient(to bottom, var(--green-bright), rgba(78,203,113,0.1));
-  }
-
-  .timeline-item {
-    position: relative;
-    padding: 0 0 2.5rem 2.5rem;
-  }
-  .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -5px; top: 6px;
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    background: var(--green-bright);
-    box-shadow: 0 0 12px rgba(78,203,113,0.6);
-  }
-
-  .tl-time {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.1rem;
-    color: var(--gold);
-    letter-spacing: 0.1em;
-  }
-
-  .tl-title {
-    font-weight: 700;
-    color: var(--white);
-    font-size: 1rem;
-    margin: 0.2rem 0;
-  }
-
-  .tl-desc {
-    font-size: 0.82rem;
-    color: var(--gray);
-    font-weight: 300;
-  }
-
-  /* ── PRIZES ── */
-  .prizes-section {
-    background: linear-gradient(180deg, rgba(13,26,17,1) 0%, rgba(26,107,58,0.1) 100%);
-  }
-
-  .podium {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    align-items: end;
-    margin-bottom: 3rem;
-  }
-
-  .prize-card {
-    border: 1px solid rgba(78,203,113,0.15);
-    background: rgba(26,107,58,0.08);
-    padding: 2rem 1.5rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .prize-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  }
-
-  .prize-card.first {
-    border-color: var(--gold);
-    background: rgba(201,168,76,0.08);
-  }
-
-  .prize-card.first::after {
-    content: '★';
-    position: absolute;
-    top: -20px; left: 50%;
-    transform: translateX(-50%);
-    font-size: 40px;
-    color: var(--gold);
-    filter: drop-shadow(0 0 10px rgba(201,168,76,0.5));
-  }
-
-  .prize-rank {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1rem;
-    letter-spacing: 0.3em;
-    color: var(--gray);
-    margin-bottom: 1rem;
-  }
-
-  .prize-card.first .prize-rank { color: var(--gold); }
-
-  .prize-trophy { font-size: 2.5rem; margin-bottom: 1rem; }
-
-  .prize-amount {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 2.2rem;
-    color: var(--white);
-  }
-
-  .prize-card.first .prize-amount {
-    font-size: 3rem;
-    color: var(--gold);
-  }
-
-  .prize-desc {
-    font-size: 0.75rem;
-    color: var(--gray);
-    margin-top: 0.5rem;
-    font-weight: 300;
-  }
-
-  /* ── ENTRY FEE TABLE ── */
-  .fee-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 2rem;
-  }
-
-  .fee-table th, .fee-table td {
-    padding: 1rem 1.5rem;
-    text-align: left;
-    font-size: 0.88rem;
-    border-bottom: 1px solid rgba(78,203,113,0.1);
-  }
-
-  .fee-table th {
-    font-family: 'Bebas Neue', cursive;
-    letter-spacing: 0.2em;
-    color: var(--green-bright);
-    background: rgba(26,107,58,0.2);
-    font-size: 0.8rem;
-  }
-
-  .fee-table td { color: rgba(245,240,232,0.8); font-weight: 300; }
-  .fee-table tr:hover td { background: rgba(26,107,58,0.1); }
-
-  .fee-highlight {
-    font-weight: 700;
-    color: var(--gold) !important;
-  }
-
-  /* ── REGISTER ── */
-  .register-section {
-    background: linear-gradient(135deg, rgba(26,107,58,0.3), rgba(13,26,17,1));
-    position: relative;
-    overflow: hidden;
-  }
-
-  .register-section::before {
-    content: '';
-    position: absolute; inset: 0;
-    background-image: radial-gradient(circle, rgba(78,203,113,0.05) 1px, transparent 1px);
-    background-size: 20px 20px;
-  }
-
-  .register-inner {
-    position: relative; z-index: 1;
-  }
-
-  .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-top: 2.5rem;
-  }
-
-  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
-  .form-group.full { grid-column: 1 / -1; }
-
-  .form-group label {
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    color: var(--green-bright);
-    font-weight: 700;
-  }
-
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    background: rgba(13,26,17,0.8);
-    border: 1px solid rgba(78,203,113,0.2);
-    color: var(--cream);
-    padding: 0.85rem 1rem;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 0.88rem;
-    font-weight: 300;
-    border-radius: 2px;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    outline: none;
-  }
-
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    border-color: var(--green-bright);
-    box-shadow: 0 0 0 3px rgba(78,203,113,0.1);
-  }
-
-  .form-group select option { background: var(--dark); }
-
-  .form-group textarea { resize: vertical; min-height: 100px; }
-
-  .form-submit {
-    margin-top: 2rem;
-    text-align: center;
-  }
-
-  /* ── FAQ ── */
-  .faq-section { background: var(--dark); }
-
-  .faq-list { margin-top: 2rem; }
-
-  .faq-item {
-    border-bottom: 1px solid rgba(78,203,113,0.1);
-    overflow: hidden;
-  }
-
-  .faq-q {
-    padding: 1.2rem 0;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--white);
-    font-weight: 700;
-    font-size: 0.92rem;
-    transition: color 0.2s;
-    user-select: none;
-  }
-
-  .faq-q:hover { color: var(--green-bright); }
-
-  .faq-q .faq-arrow {
-    font-size: 1.2rem;
-    color: var(--green-bright);
-    transition: transform 0.3s;
-  }
-
-  .faq-q.open .faq-arrow { transform: rotate(45deg); }
-
-  .faq-a {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-    font-size: 0.85rem;
-    color: var(--gray);
-    font-weight: 300;
-    line-height: 1.8;
-  }
-
-  .faq-a.open { max-height: 300px; padding-bottom: 1.2rem; }
-
-  /* ── FOOTER ── */
-  footer {
-    background: rgba(0,0,0,0.5);
-    border-top: 1px solid rgba(78,203,113,0.1);
-    padding: 3rem 2rem;
-    text-align: center;
-  }
-
-  .footer-logo {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 2rem;
-    color: var(--white);
-    letter-spacing: 0.15em;
-    margin-bottom: 1rem;
-  }
-  .footer-logo em { color: var(--green-bright); font-style: normal; }
-
-  .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    list-style: none;
-    margin: 1.5rem 0;
-    flex-wrap: wrap;
-  }
-
-  .footer-links a {
-    color: var(--gray);
-    text-decoration: none;
-    font-size: 0.78rem;
-    letter-spacing: 0.15em;
-    transition: color 0.2s;
-  }
-  .footer-links a:hover { color: var(--green-bright); }
-
-  .footer-copy {
-    font-size: 0.72rem;
-    color: rgba(138,155,142,0.5);
-    letter-spacing: 0.1em;
-  }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  @keyframes scrollLine {
-    0% { transform: scaleY(1) translateY(0); opacity: 1; }
-    100% { transform: scaleY(0) translateY(40px); opacity: 0; }
-  }
-
-  /* Scroll reveal */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    section { padding: 4rem 1.5rem; }
-    .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-    .form-grid { grid-template-columns: 1fr; }
-    .podium { grid-template-columns: 1fr; }
-    .prize-card.first { order: -1; }
-  }
-</style>
-</head>
-<body>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">SPRING <em>LINKS</em></div>
-  <ul class="nav-links">
-    <li><a href="#about">ABOUT</a></li>
-    <li><a href="#schedule">SCHEDULE</a></li>
-    <li><a href="#prize">PRIZE</a></li>
-    <li><a href="#entry">ENTRY</a></li>
-    <li><a href="#faq">FAQ</a></li>
-  </ul>
-  <a href="#entry" class="btn-primary" style="padding:0.6rem 1.5rem;font-size:0.78rem;">エントリー</a>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-photo"></div>
-  <div class="hero-grade"></div>
-  <div class="hero-texture"></div>
-  <div class="hero-line"></div>
-
-  <div class="hero-content">
-    <div class="badge">春は、出会いのフェアウェイへ🌿</div>
-    <p class="hero-eyebrow">SPRING GOLF CUP 2026</p>
-
-    <div class="slogan-block">
-      <div class="slogan-en">SWING<br><span class="accent">TOGETHER</span></div>
-      <div class="slogan-rule"></div>
-      <div class="slogan-ja">
-        仲間と、<span class="ja-accent">最高の一打</span>を。
+  <!DOCTYPE html>
+  <html lang="ja">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spring LINKS GOLF CUP 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;700;900&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // ▼▼▼ EmailJS の設定をここに入力してください ▼▼▼
+    const EMAILJS_PUBLIC_KEY  = 'Kiin4jaevreMxNtSU';   // Public Key
+    const EMAILJS_SERVICE_ID  = 'service_5kcoazf';   // Service ID
+    const EMAILJS_TEMPLATE_ID = 'template_q5tg8qy';  // Template ID
+    // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  </script>
+  <style>
+    :root {
+      --green: #1a6b3a;
+      --green-light: #2d9e57;
+      --green-bright: #4ecb71;
+      --cream: #f5f0e8;
+      --dark: #0d1a11;
+      --gold: #c9a84c;
+      --gold-light: #e8c96b;
+      --white: #ffffff;
+      --gray: #8a9b8e;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: 'Noto Sans JP', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background: var(--dark);
+    }
+
+    /* Photo background via Unsplash */
+    .hero-photo {
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=1800&q=80&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center 40%;
+      filter: brightness(0.45) saturate(0.8);
+      transform: scale(1.04);
+      animation: heroZoom 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroZoom {
+      from { transform: scale(1.04); }
+      to   { transform: scale(1.12); }
+    }
+
+    /* Color grade overlay — deep green cinematic tone */
+    .hero-grade {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(160deg, rgba(0,20,10,0.55) 0%, transparent 50%),
+        linear-gradient(to top, rgba(0,10,5,0.85) 0%, transparent 55%),
+        linear-gradient(to right, rgba(0,30,15,0.3) 0%, transparent 60%);
+    }
+
+    /* Subtle scan-line texture */
+    .hero-texture {
+      position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(0,0,0,0.06) 3px,
+        rgba(0,0,0,0.06) 4px
+      );
+      pointer-events: none;
+    }
+
+    /* Gold accent line left */
+    .hero-line {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+      opacity: 0.7;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+      max-width: 900px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--dark);
+      font-family: 'Bebas Neue', cursive;
+      font-size: 0.85rem;
+      letter-spacing: 0.25em;
+      padding: 0.35em 1.2em;
+      border-radius: 2px;
+      margin-bottom: 1.8rem;
+      animation: fadeDown 0.8s ease both;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      letter-spacing: 0.55em;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.2rem;
+      animation: fadeDown 0.9s 0.1s ease both;
+    }
+
+    /* ── NEW SLOGAN BLOCK ── */
+    .slogan-block {
+      animation: fadeDown 1s 0.2s ease both;
+      margin-bottom: 1.2rem;
+    }
+
+    .slogan-en {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(5rem, 14vw, 12rem);
+      line-height: 0.88;
+      color: var(--white);
+      letter-spacing: 0.02em;
+      text-shadow: 0 4px 40px rgba(0,0,0,0.6);
+    }
+
+    .slogan-en .accent {
+      color: var(--green-bright);
+      display: inline-block;
+      position: relative;
+    }
+
+    .slogan-ja {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.1rem, 3.5vw, 2rem);
+      letter-spacing: 0.12em;
+      color: var(--white);
+      margin: 0.6rem 0 0.2rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.7);
+    }
+
+    .slogan-ja .ja-accent {
+      color: var(--gold-light);
+      font-style: normal;
+    }
+
+    .slogan-sub {
+      font-size: clamp(0.8rem, 1.8vw, 1rem);
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: rgba(255,255,255,0.5);
+      margin-top: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    /* thin gold rule */
+    .slogan-rule {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 1.4rem auto;
+    }
+
+    .hero-year {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(1rem, 3vw, 2rem);
+      color: var(--gold);
+      letter-spacing: 0.7em;
+      animation: fadeDown 1s 0.35s ease both;
+    }
+
+    .hero-sub {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--gray);
+      letter-spacing: 0.2em;
+      margin-top: 1.5rem;
+      animation: fadeDown 1s 0.5s ease both;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeUp 1s 0.7s ease both;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--green), var(--green-light));
+      color: var(--white);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      padding: 1rem 2.5rem;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 24px rgba(45,158,87,0.35);
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(45,158,87,0.5);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      padding: 1rem 2.5rem;
+      border: 1px solid var(--gold);
+      border-radius: 3px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--gray);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      animation: fadeIn 2s 1.5s ease both;
+    }
+    .scroll-hint::after {
+      content: '';
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gray), transparent);
+      animation: scrollLine 2s 1.5s ease infinite;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(13,26,17,0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(78,203,113,0.1);
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.4rem;
+      color: var(--white);
+      letter-spacing: 0.1em;
+    }
+    .nav-logo em {
+      color: var(--green-bright);
+      font-style: normal;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--green-bright); }
+
+    /* ── SECTIONS ── */
+    section { padding: 6rem 2rem; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 0.8rem;
+      letter-spacing: 0.5em;
+      color: var(--green-bright);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title em {
+      color: var(--gold);
+      font-style: italic;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.6em;
+    }
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--green-bright), transparent);
+      margin: 1.5rem 0 2.5rem;
+    }
+
+    /* ── INFO CARDS ── */
+    .info-section { background: var(--dark); }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5px;
+      background: rgba(78,203,113,0.12);
+      border: 1px solid rgba(78,203,113,0.12);
+    }
+
+    .info-card {
+      background: rgba(13,26,17,0.9);
+      padding: 2.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+    .info-card:hover {
+      background: rgba(26,107,58,0.3);
+    }
+    .info-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: linear-gradient(to bottom, var(--green-bright), transparent);
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.4s;
+    }
+    .info-card:hover::before { transform: scaleY(1); }
+
+    .info-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .info-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      color: var(--green-bright);
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .info-value {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 2rem;
+      color: var(--white);
+      line-height: 1.1;
+    }
+
+    .info-note {
+      font-size: 0.78rem;
+      color: var(--gray);
+      margin-top: 0.5rem;
+      font-weight: 300;
+    }
+
+    /* ── ABOUT ── */
+    .about-section {
+      background: linear-gradient(135deg, rgba(26,107,58,0.15) 0%, rgba(13,26,17,1) 50%);
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-weight: 300;
+      line-height: 1.9;
+      color: rgba(245,240,232,0.8);
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .stat-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .stat-item {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(78,203,113,0.15);
+      background: rgba(26,107,58,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-num {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 3.5rem;
+      color: var(--green-bright);
+      line-height: 1;
+    }
+
+    .stat-detail { flex: 1; }
+    .stat-detail strong {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--white);
+      font-weight: 700;
+    }
+    .stat-detail span {
+      font-size: 0.78rem;
+      color: var(--gray);
+      font-weight: 300;
+    }
+
+    /* ── SCHEDULE ── */
+    .schedule-section { background: rgba(0,0,0,0.3); }
+
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--green-bright), rgba(78,203,113,0.1));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 2.5rem 2.5rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -5px; top: 6px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--green-bright);
+      box-shadow: 0 0 12px rgba(78,203,113,0.6);
+    }
+
+    .tl-time {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.1rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+    }
+
+    .tl-title {
+      font-weight: 700;
+      color: var(--white);
+      font-size: 1rem;
+      margin: 0.2rem 0;
+    }
+
+    .tl-desc {
+      font-size: 0.82rem;
+      color: var(--gray);
+      font-weight: 300;
+    }
+
+    /* ── PRIZES ── */
+    .prizes-section {
+      background: linear-gradient(180deg, rgba(13,26,17,1) 0%, rgba(26,107,58,0.1) 100%);
+    }
+
+    .podium {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      align-items: end;
+      margin-bottom: 3rem;
+    }
+
+    .prize-card {
+      border: 1px solid rgba(78,203,113,0.15);
+      background: rgba(26,107,58,0.08);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .prize-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .prize-card.first {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.08);
+    }
+
+    .prize-card.first::after {
+      content: '★';
+      position: absolute;
+      top: -20px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 40px;
+      color: var(--gold);
+      filter: drop-shadow(0 0 10px rgba(201,168,76,0.5));
+    }
+
+    .prize-rank {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1rem;
+      letter-spacing: 0.3em;
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+
+    .prize-card.first .prize-rank { color: var(--gold); }
+
+    .prize-trophy { font-size: 2.5rem; margin-bottom: 1rem; }
+
+    .prize-amount {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 2.2rem;
+      color: var(--white);
+    }
+
+    .prize-card.first .prize-amount {
+      font-size: 3rem;
+      color: var(--gold);
+    }
+
+    .prize-desc {
+      font-size: 0.75rem;
+      color: var(--gray);
+      margin-top: 0.5rem;
+      font-weight: 300;
+    }
+
+    /* ── ENTRY FEE TABLE ── */
+    .fee-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+    }
+
+    .fee-table th, .fee-table td {
+      padding: 1rem 1.5rem;
+      text-align: left;
+      font-size: 0.88rem;
+      border-bottom: 1px solid rgba(78,203,113,0.1);
+    }
+
+    .fee-table th {
+      font-family: 'Bebas Neue', cursive;
+      letter-spacing: 0.2em;
+      color: var(--green-bright);
+      background: rgba(26,107,58,0.2);
+      font-size: 0.8rem;
+    }
+
+    .fee-table td { color: rgba(245,240,232,0.8); font-weight: 300; }
+    .fee-table tr:hover td { background: rgba(26,107,58,0.1); }
+
+    .fee-highlight {
+      font-weight: 700;
+      color: var(--gold) !important;
+    }
+
+    /* ── REGISTER ── */
+    .register-section {
+      background: linear-gradient(135deg, rgba(26,107,58,0.3), rgba(13,26,17,1));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .register-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(78,203,113,0.05) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    .register-inner {
+      position: relative; z-index: 1;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+    .form-group.full { grid-column: 1 / -1; }
+
+    .form-group label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: var(--green-bright);
+      font-weight: 700;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(13,26,17,0.8);
+      border: 1px solid rgba(78,203,113,0.2);
+      color: var(--cream);
+      padding: 0.85rem 1rem;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 300;
+      border-radius: 2px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--green-bright);
+      box-shadow: 0 0 0 3px rgba(78,203,113,0.1);
+    }
+
+    .form-group select option { background: var(--dark); }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .form-submit {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    /* ── FAQ ── */
+    .faq-section { background: var(--dark); }
+
+    .faq-list { margin-top: 2rem; }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(78,203,113,0.1);
+      overflow: hidden;
+    }
+
+    .faq-q {
+      padding: 1.2rem 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.92rem;
+      transition: color 0.2s;
+      user-select: none;
+    }
+
+    .faq-q:hover { color: var(--green-bright); }
+
+    .faq-q .faq-arrow {
+      font-size: 1.2rem;
+      color: var(--green-bright);
+      transition: transform 0.3s;
+    }
+
+    .faq-q.open .faq-arrow { transform: rotate(45deg); }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      font-size: 0.85rem;
+      color: var(--gray);
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    .faq-a.open { max-height: 300px; padding-bottom: 1.2rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: rgba(0,0,0,0.5);
+      border-top: 1px solid rgba(78,203,113,0.1);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 2rem;
+      color: var(--white);
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+    }
+    .footer-logo em { color: var(--green-bright); font-style: normal; }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--green-bright); }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(138,155,142,0.5);
+      letter-spacing: 0.1em;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes scrollLine {
+      0% { transform: scaleY(1) translateY(0); opacity: 1; }
+      100% { transform: scaleY(0) translateY(40px); opacity: 0; }
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      section { padding: 4rem 1.5rem; }
+      .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .form-grid { grid-template-columns: 1fr; }
+      .podium { grid-template-columns: 1fr; }
+      .prize-card.first { order: -1; }
+    }
+  </style>
+  </head>
+  <body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">SPRING <em>LINKS</em></div>
+    <ul class="nav-links">
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#schedule">SCHEDULE</a></li>
+      <li><a href="#prize">PRIZE</a></li>
+      <li><a href="#entry">ENTRY</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#entry" class="btn-primary" style="padding:0.6rem 1.5rem;font-size:0.78rem;">エントリー</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-photo"></div>
+    <div class="hero-grade"></div>
+    <div class="hero-texture"></div>
+    <div class="hero-line"></div>
+
+    <div class="hero-content">
+      <div class="badge">春は、出会いのフェアウェイへ🌿</div>
+      <p class="hero-eyebrow">SPRING GOLF CUP 2026</p>
+
+      <div class="slogan-block">
+        <div class="slogan-en">SWING<br><span class="accent">TOGETHER</span></div>
+        <div class="slogan-rule"></div>
+        <div class="slogan-ja">
+          仲間と、<span class="ja-accent">最高の一打</span>を。
+        </div>
+        <p class="slogan-sub">仲間と出会い、フェアウェイで繋がろう</p>
       </div>
-      <p class="slogan-sub">仲間と出会い、フェアウェイで繋がろう</p>
-    </div>
 
-    <p class="hero-year">2 0 2 6</p>
-    <div class="hero-cta">
-      <a href="#entry" class="btn-primary">今すぐエントリー →</a>
-      <a href="#about" class="btn-outline">詳細を見る</a>
-    </div>
-  </div>
-
-  <div class="scroll-hint">SCROLL</div>
-</section>
-
-<!-- INFO CARDS -->
-<section class="info-section" id="about">
-  <div class="container">
-    <div class="info-grid">
-      <div class="info-card reveal">
-        <div class="info-icon">📅</div>
-        <div class="info-label">DATE</div>
-        <div class="info-value">2026.05.17<br>SUN</div>
-        <div class="info-note">集合：8:00 / スタート：9:30</div>
-      </div>
-      <div class="info-card reveal">
-        <div class="info-icon">📍</div>
-        <div class="info-label">VENUE</div>
-        <div class="info-value">長江ゴルフクラブ</div>
-      </div>
-      <div class="info-card reveal">
-        <div class="info-icon">🏌️</div>
-        <div class="info-label">FORMAT</div>
-        <div class="info-value">18ホール<br>ストローク</div>
-        <div class="info-note">ストロークプレー / ハンデあり</div>
-      </div>
-      <div class="info-card reveal">
-        <div class="info-icon">👥</div>
-        <div class="info-label">CAPACITY</div>
-        <div class="info-value">最大<br>40名</div>
-        <div class="info-note">現在11名参加確定</div>
+      <p class="hero-year">2 0 2 6</p>
+      <div class="hero-cta">
+        <a href="#entry" class="btn-primary">今すぐエントリー →</a>
+        <a href="#about" class="btn-outline">詳細を見る</a>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ABOUT -->
-<section class="about-section">
-  <div class="container">
-    <div class="about-layout">
-      <div class="about-text reveal">
-        <p class="section-label">ABOUT THE EVENT</p>
-        <h2 class="section-title">同世代で<br>楽しむ<em>golf</em></h2>
-        <div class="divider"></div>
-        <p>「ゴルフって、もっと楽しくていいはず。」そんな想いから生まれた春のゴルフコンペです。スコアだけでなく、仲間と過ごす時間やつながりを大切にしています。</p>
-        <p>ハンデキャップ制度を採用しているため、初心者から経験者まで公平に楽しめます。競技後は懇親会もご用意。同世代のゴルファーたちと、新しい繋がりを作りましょう。</p>
-        <p>参加者同士のコミュニティも活発で、コンペ後も一緒にラウンドする仲間ができることも。ゴルフを通じた出会いと成長を、ぜひ体験してください。</p>
-        <p>📸 当日は<strong style="color:var(--gold-light);">美人撮影師</strong>が同行。プロのカメラで最高の一瞬を撮影し、あなたのスウィングやベストショットを美しく残します。参加の記念に、素敵な写真をお持ち帰りください。</p>
-        <a href="#entry" class="btn-primary" style="margin-top:1.5rem;display:inline-block;">エントリーする →</a>
+    <div class="scroll-hint">SCROLL</div>
+  </section>
+
+  <!-- INFO CARDS -->
+  <section class="info-section" id="about">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-card reveal">
+          <div class="info-icon">📅</div>
+          <div class="info-label">DATE</div>
+          <div class="info-value">2026.05.17<br>SUN</div>
+          <div class="info-note">集合：8:00 / スタート：9:30</div>
+        </div>
+        <div class="info-card reveal">
+          <div class="info-icon">📍</div>
+          <div class="info-label">VENUE</div>
+          <div class="info-value">長江ゴルフクラブ</div>
+        </div>
+        <div class="info-card reveal">
+          <div class="info-icon">🏌️</div>
+          <div class="info-label">FORMAT</div>
+          <div class="info-value">18ホール<br>ストローク</div>
+          <div class="info-note">ストロークプレー / ハンデあり</div>
+        </div>
+        <div class="info-card reveal">
+          <div class="info-icon">👥</div>
+          <div class="info-label">CAPACITY</div>
+          <div class="info-value">最大<br>40名</div>
+          <div class="info-note">現在11名参加確定</div>
+        </div>
       </div>
-      <div class="about-visual reveal">
-        <div class="stat-stack">
-          <div class="stat-item">
-            <div class="stat-detail">
-              <strong>春のゴルフ楽しに</strong>
-              <span></span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-layout">
+        <div class="about-text reveal">
+          <p class="section-label">ABOUT THE EVENT</p>
+          <h2 class="section-title">仲間<br>楽しむ<em>golf</em></h2>
+          <div class="divider"></div>
+          <p>「ゴルフって、もっと楽しくていいはず。」そんな想いから生まれた春のゴルフコンペです。スコアだけでなく、仲間と過ごす時間やつながりを大切にしています。</p>
+          <p>ハンデキャップ制度を採用しているため、初心者から経験者まで公平に楽しめます。競技後は懇親会もご用意。同世代のゴルファーたちと、新しい繋がりを作りましょう。</p>
+          <p>参加者同士のコミュニティも活発で、コンペ後も一緒にラウンドする仲間ができることも。ゴルフを通じた出会いと成長を、ぜひ体験してください。</p>
+          <p>📸 当日は<strong style="color:var(--gold-light);">美人撮影師</strong>が同行。プロのカメラで最高の一瞬を撮影し、あなたのスウィングやベストショットを美しく残します。参加の記念に、素敵な写真をお持ち帰りください。</p>
+          <a href="#entry" class="btn-primary" style="margin-top:1.5rem;display:inline-block;">エントリーする →</a>
+        </div>
+        <div class="about-visual reveal">
+          <div class="stat-stack">
+            <div class="stat-item">
+              <div class="stat-detail">
+                <strong>春のゴルフ楽しに</strong>
+                <span></span>
+              </div>
             </div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-detail">
-              <strong>若いゴルファーのコミュニティを育てる</strong>
+            <div class="stat-item">
+              <div class="stat-detail">
+                <strong>若いゴルファーのコミュニティを育てる</strong>
+              </div>
             </div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-detail">
-              <strong>新しい繋がりを形成する</strong>
+            <div class="stat-item">
+              <div class="stat-detail">
+                <strong>新しい繋がりを形成する</strong>
+              </div>
             </div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-detail">
-              <strong>春を感じる緑色の服装でご参加いただけますと幸いです。/strong>
+            <div class="stat-item">
+              <div class="stat-detail">
+                <strong>春を感じる緑色の服装でご参加いただけますと幸いです。/strong>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- SCHEDULE -->
-<section class="schedule-section" id="schedule">
-  <div class="container">
-    <p class="section-label reveal">SCHEDULE</p>
-    <h2 class="section-title reveal">当日の<em>flow</em></h2>
-    <div class="divider reveal"></div>
-    <div class="timeline">
-      <div class="timeline-item reveal">
-        <div class="tl-time">08:30</div>
-        <div class="tl-title">集合・受付・朝食・コース準備</div>
-        <div class="tl-desc">グリーンズカントリークラブ クラブハウス前に集合。受付・組み合わせ確認を行います。組ごとのキャディ紹介も。<br><span style="color:var(--gold-light);">📸 美人撮影師が受付よりスタンバイ。当日の様子を美しく撮影します。</span></div>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="tl-time">09:30</div>
-        <div class="tl-title">スタート（OUT/IN 分割）</div>
-        <div class="tl-desc">18ホール ストロークプレー開始。6組に分かれて同時スタート。</div>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="tl-time">12:30</div>
-        <div class="tl-title">ハーフタイム・昼食</div>
-        <div class="tl-desc">コースレストランにて昼食（食事代込み）。中間スコア発表も。</div>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="tl-time">18:00</div>
-        <div class="tl-title">ラウンド終了・スコア集計</div>
-        <div class="tl-desc">全ホール終了後、クラブハウスにてスコア集計。結果発表の準備。</div>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="tl-time">19:30</div>
-        <div class="tl-title">都内中華レストランで懇親会パーティー</div>
-        <div class="tl-desc">懇親パーティー（参加自由）。</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRIZES -->
-<section class="prizes-section" id="prize">
-  <div class="container">
-    <p class="section-label reveal">PRIZES</p>
-    <h2 class="section-title reveal">豪華<em>prize</em>を用意</h2>
-    <div class="divider reveal"></div>
-
-    <div class="podium">
-      <div class="prize-card reveal">
-        <div class="prize-rank">2ND PLACE</div>
-        <div class="prize-trophy">🥈</div>
-        <div class="prize-amount">未定</div>
-        <div class="prize-desc">商品券 or ゴルフ用品</div>
-      </div>
-      <div class="prize-card first reveal">
-        <div class="prize-rank">1ST PLACE</div>
-        <div class="prize-trophy">🏆</div>
-        <div class="prize-amount">未定</div>
-        <div class="prize-desc">商品券 or ゴルフ用品<br>+ トロフィー授与</div>
-      </div>
-      <div class="prize-card reveal">
-        <div class="prize-rank">3RD PLACE</div>
-        <div class="prize-trophy">🥉</div>
-        <div class="prize-amount">未定</div>
-        <div class="prize-desc">商品券 or ゴルフ用品</div>
-      </div>
-    </div>
-
-    <!-- Special prizes -->
-    <div class="info-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-      <div class="info-card reveal">
-        <div class="info-icon">🎯</div>
-        <div class="info-label">NEAREST PIN</div>
-        <div class="info-value">未定</div>
-        <div class="info-note">各ショートホール設定</div>
-      </div>
-      <div class="info-card reveal">
-        <div class="info-icon">💨</div>
-        <div class="info-label">LONGEST DRIVE</div>
-        <div class="info-value">未定</div>
-        <div class="info-note">男女それぞれ設定</div>
-      </div>
-      <div class="info-card reveal">
-        <div class="info-icon">📸</div>
-        <div class="info-label">PHOTO SERVICE</div>
-        <div class="info-value">撮影師</div>
-        <div class="info-note">美人撮影師同行・綺麗に写真を撮ってもらえます</div>
-      </div>
-      <div class="info-card reveal">
-        <div class="info-icon">🎰</div>
-        <div class="info-label">DOOR PRIZE</div>
-        <div class="info-value">抽選</div>
-        <div class="info-note">全員参加の豪華抽選会</div>
-      </div>
-      <div class="info-card reveal">
-        <div class="info-icon">🏌️‍♀️</div>
-        <div class="info-label">BEST GROSS</div>
-        <div class="info-value">特別賞</div>
-        <div class="info-note">ハンデなし最高スコア者</div>
-      </div>
-    </div>
-
-    <!-- Fee table -->
-    <div style="margin-top:4rem;">
-      <h3 class="section-title reveal" style="font-size:2rem;">参加費</h3>
+  <!-- SCHEDULE -->
+  <section class="schedule-section" id="schedule">
+    <div class="container">
+      <p class="section-label reveal">SCHEDULE</p>
+      <h2 class="section-title reveal">当日の<em>flow</em></h2>
       <div class="divider reveal"></div>
-      <table class="fee-table reveal">
-        <thead>
-          <tr>
-            <th>プラン</th>
-            <th>費用</th>
-            <th>含まれるもの</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>プレー費用</td>
-            <td class="fee-highlight">¥19,000（税込）※千葉国際カントリークラブに変更場合　プレー費¥16,000（税込）</td>
-            <td>グリーンフィ・カート</td>
-          </tr>
-          <tr>
-            <td>参加費（5/9まで）</td>
-            <td class="fee-highlight">¥2,500(男性)</td>
-            <td>参加費ほぼ賞品に充当する</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- ENTRY FORM -->
-<section class="register-section" id="entry">
-  <div class="container register-inner">
-    <p class="section-label reveal">ENTRY FORM</p>
-    <h2 class="section-title reveal">今すぐ<em>entry</em></h2>
-    <div class="divider reveal"></div>
-    <p class="reveal" style="font-weight:300; color:rgba(245,240,232,0.7); font-size:0.9rem; margin-bottom:0.5rem;">
-      定員24名・先着順。お早めにエントリーください。
-    </p>
-
-    <div class="form-grid reveal">
-      <div class="form-group">
-        <label>お名前 *</label>
-        <input id="f_name" type="text" placeholder="山田 太郎">
-      </div>
-      <div class="form-group">
-        <label>年齢 *</label>
-        <select id="f_age">
-          <option value="" disabled selected>選択してください</option>
-          <option>20歳</option>
-          <option>21歳</option>
-          <option>22歳</option>
-          <option>23歳</option>
-          <option>24歳</option>
-          <option>25歳</option>
-          <option>26歳</option>
-          <option>27歳</option>
-          <option>28歳</option>
-          <option>29歳</option>
-          <option>30歳</option>
-          <option>31歳</option>
-          <option>32歳</option>
-          <option>33歳</option>
-          <option>34歳</option>
-          <option>35歳</option>
-          <option>36歳</option>
-          <option>37歳</option>
-          <option>38歳</option>
-          <option>39歳</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>メールアドレス *</label>
-        <input id="f_email" type="email" placeholder="example@email.com">
-      </div>
-      <div class="form-group">
-        <label>電話番号 *</label>
-        <input id="f_tel" type="tel" placeholder="090-0000-0000">
-      </div>
-      <div class="form-group">
-        <label>Wechat(微信号) *</label>
-        <input id="f_wechat" type="text" placeholder="wechat_id">
-      </div>
-      <div class="form-group">
-        <label>ゴルフ歴</label>
-        <select id="f_career">
-          <option value="" disabled selected>選択してください</option>
-          <option>1年未満</option>
-          <option>1〜3年</option>
-          <option>3〜5年</option>
-          <option>5〜10年</option>
-          <option>10年以上</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>平均スコア（目安）</label>
-        <select id="f_score">
-          <option value="" disabled selected>選択してください</option>
-          <option>〜80台</option>
-          <option>90〜99</option>
-          <option>100〜109</option>
-          <option>110〜119</option>
-          <option>120以上</option>
-          <option>わからない</option>
-        </select>
-      </div>
-      <div class="form-group full">
-        <label>ご要望・アレルギー等</label>
-        <textarea id="f_note" placeholder="食物アレルギーや当日のご要望があればご記入ください"></textarea>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="tl-time">08:30</div>
+          <div class="tl-title">集合・受付・朝食・コース準備</div>
+          <div class="tl-desc">グリーンズカントリークラブ クラブハウス前に集合。受付・組み合わせ確認を行います。組ごとのキャディ紹介も。<br><span style="color:var(--gold-light);">📸 美人撮影師が受付よりスタンバイ。当日の様子を美しく撮影します。</span></div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="tl-time">09:30</div>
+          <div class="tl-title">スタート（OUT/IN 分割）</div>
+          <div class="tl-desc">18ホール ストロークプレー開始。6組に分かれて同時スタート。</div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="tl-time">12:30</div>
+          <div class="tl-title">ハーフタイム・昼食</div>
+          <div class="tl-desc">コースレストランにて昼食（食事代込み）。中間スコア発表も。</div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="tl-time">18:00</div>
+          <div class="tl-title">ラウンド終了・スコア集計</div>
+          <div class="tl-desc">全ホール終了後、クラブハウスにてスコア集計。結果発表の準備。</div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="tl-time">19:30</div>
+          <div class="tl-title">都内中華レストランで懇親会パーティー</div>
+          <div class="tl-desc">懇親パーティー（参加自由）。</div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="form-submit reveal">
-      <button class="btn-primary" style="font-size:1rem; padding:1.2rem 4rem;" onclick="handleSubmit()">
-        エントリーを確定する →
-      </button>
-      <p style="font-size:0.75rem; color:var(--gray); margin-top:1rem; font-weight:300;">
-        送信後、確認メールをお送りします。迷惑メールフォルダもご確認ください。
+  <!-- PRIZES -->
+  <section class="prizes-section" id="prize">
+    <div class="container">
+      <p class="section-label reveal">PRIZES</p>
+      <h2 class="section-title reveal">豪華<em>prize</em>を用意</h2>
+      <div class="divider reveal"></div>
+
+      <div class="podium">
+        <div class="prize-card reveal">
+          <div class="prize-rank">2ND PLACE</div>
+          <div class="prize-trophy">🥈</div>
+          <div class="prize-amount">未定</div>
+          <div class="prize-desc">商品券 or ゴルフ用品</div>
+        </div>
+        <div class="prize-card first reveal">
+          <div class="prize-rank">1ST PLACE</div>
+          <div class="prize-trophy">🏆</div>
+          <div class="prize-amount">未定</div>
+          <div class="prize-desc">商品券 or ゴルフ用品<br>+ トロフィー授与</div>
+        </div>
+        <div class="prize-card reveal">
+          <div class="prize-rank">3RD PLACE</div>
+          <div class="prize-trophy">🥉</div>
+          <div class="prize-amount">未定</div>
+          <div class="prize-desc">商品券 or ゴルフ用品</div>
+        </div>
+      </div>
+
+      <!-- Special prizes -->
+      <div class="info-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+        <div class="info-card reveal">
+          <div class="info-icon">🎯</div>
+          <div class="info-label">NEAREST PIN</div>
+          <div class="info-value">未定</div>
+          <div class="info-note">各ショートホール設定</div>
+        </div>
+        <div class="info-card reveal">
+          <div class="info-icon">💨</div>
+          <div class="info-label">LONGEST DRIVE</div>
+          <div class="info-value">未定</div>
+          <div class="info-note">男女それぞれ設定</div>
+        </div>
+        <div class="info-card reveal">
+          <div class="info-icon">📸</div>
+          <div class="info-label">PHOTO SERVICE</div>
+          <div class="info-value">撮影師</div>
+          <div class="info-note">美人撮影師同行・綺麗に写真を撮ってもらえます</div>
+        </div>
+        <div class="info-card reveal">
+          <div class="info-icon">🎰</div>
+          <div class="info-label">DOOR PRIZE</div>
+          <div class="info-value">抽選</div>
+          <div class="info-note">全員参加の豪華抽選会</div>
+        </div>
+        <div class="info-card reveal">
+          <div class="info-icon">🏌️‍♀️</div>
+          <div class="info-label">BEST GROSS</div>
+          <div class="info-value">特別賞</div>
+          <div class="info-note">ハンデなし最高スコア者</div>
+        </div>
+      </div>
+
+      <!-- Fee table -->
+      <div style="margin-top:4rem;">
+        <h3 class="section-title reveal" style="font-size:2rem;">参加費</h3>
+        <div class="divider reveal"></div>
+        <table class="fee-table reveal">
+          <thead>
+            <tr>
+              <th>プラン</th>
+              <th>費用</th>
+              <th>含まれるもの</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>プレー費用</td>
+              <td class="fee-highlight">¥19,000（税込）※千葉国際カントリークラブに変更場合　プレー費¥16,000（税込）</td>
+              <td>グリーンフィ・カート</td>
+            </tr>
+            <tr>
+              <td>参加費（5/9まで）</td>
+              <td class="fee-highlight">¥2,500(男性)</td>
+              <td>参加費ほぼ賞品に充当する</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENTRY FORM -->
+  <section class="register-section" id="entry">
+    <div class="container register-inner">
+      <p class="section-label reveal">ENTRY FORM</p>
+      <h2 class="section-title reveal">今すぐ<em>entry</em></h2>
+      <div class="divider reveal"></div>
+      <p class="reveal" style="font-weight:300; color:rgba(245,240,232,0.7); font-size:0.9rem; margin-bottom:0.5rem;">
+        定員24名・先着順。お早めにエントリーください。
       </p>
+
+      <div class="form-grid reveal">
+        <div class="form-group">
+          <label>お名前 *</label>
+          <input id="f_name" type="text" placeholder="山田 太郎">
+        </div>
+        <div class="form-group">
+          <label>年齢 *</label>
+          <select id="f_age">
+            <option value="" disabled selected>選択してください</option>
+            <option>20歳</option>
+            <option>21歳</option>
+            <option>22歳</option>
+            <option>23歳</option>
+            <option>24歳</option>
+            <option>25歳</option>
+            <option>26歳</option>
+            <option>27歳</option>
+            <option>28歳</option>
+            <option>29歳</option>
+            <option>30歳</option>
+            <option>31歳</option>
+            <option>32歳</option>
+            <option>33歳</option>
+            <option>34歳</option>
+            <option>35歳</option>
+            <option>36歳</option>
+            <option>37歳</option>
+            <option>38歳</option>
+            <option>39歳</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>メールアドレス *</label>
+          <input id="f_email" type="email" placeholder="example@email.com">
+        </div>
+        <div class="form-group">
+          <label>電話番号 *</label>
+          <input id="f_tel" type="tel" placeholder="090-0000-0000">
+        </div>
+        <div class="form-group">
+          <label>Wechat(微信号) *</label>
+          <input id="f_wechat" type="text" placeholder="wechat_id">
+        </div>
+        <div class="form-group">
+          <label>ゴルフ歴</label>
+          <select id="f_career">
+            <option value="" disabled selected>選択してください</option>
+            <option>1年未満</option>
+            <option>1〜3年</option>
+            <option>3〜5年</option>
+            <option>5〜10年</option>
+            <option>10年以上</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>平均スコア（目安）</label>
+          <select id="f_score">
+            <option value="" disabled selected>選択してください</option>
+            <option>〜80台</option>
+            <option>90〜99</option>
+            <option>100〜109</option>
+            <option>110〜119</option>
+            <option>120以上</option>
+            <option>わからない</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label>ご要望・アレルギー等</label>
+          <textarea id="f_note" placeholder="食物アレルギーや当日のご要望があればご記入ください"></textarea>
+        </div>
+      </div>
+
+      <div class="form-submit reveal">
+        <button class="btn-primary" style="font-size:1rem; padding:1.2rem 4rem;" onclick="handleSubmit()">
+          エントリーを確定する →
+        </button>
+        <p style="font-size:0.75rem; color:var(--gray); margin-top:1rem; font-weight:300;">
+          送信後、確認メールをお送りします。迷惑メールフォルダもご確認ください。
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- FAQ -->
-<section class="faq-section" id="faq">
-  <div class="container">
-    <p class="section-label reveal">FAQ</p>
-    <h2 class="section-title reveal">よくある<em>questions</em></h2>
-    <div class="divider reveal"></div>
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <p class="section-label reveal">FAQ</p>
+      <h2 class="section-title reveal">よくある<em>questions</em></h2>
+      <div class="divider reveal"></div>
 
-    <div class="faq-list reveal">
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          初心者でも参加できますか？
-          <span class="faq-arrow">+</span>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            初心者でも参加できますか？
+            <span class="faq-arrow">+</span>
+          </div>
+          <div class="faq-a">
+            はい、ゴルフ歴・スコアは問いません。ハンデキャップ制を採用しているため、初心者の方でも上級者と公平に競えます。初めてのコンペという方も多く参加されています。お気軽にご参加ください。
+          </div>
         </div>
-        <div class="faq-a">
-          はい、ゴルフ歴・スコアは問いません。ハンデキャップ制を採用しているため、初心者の方でも上級者と公平に競えます。初めてのコンペという方も多く参加されています。お気軽にご参加ください。
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            一人での参加は可能ですか？
+            <span class="faq-arrow">+</span>
+          </div>
+          <div class="faq-a">
+            もちろん可能です。参加者の約半数がおひとりでのエントリーです。組み合わせはこちらで調整しますので、当日は自然と仲間ができます。
+          </div>
         </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          一人での参加は可能ですか？
-          <span class="faq-arrow">+</span>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            クラブやカートのレンタルはありますか？
+            <span class="faq-arrow">+</span>
+          </div>
+          <div class="faq-a">
+            クラブのレンタルはゴルフ場にてご用意があります（別途費用）。カートは参加費に含まれています。詳細はエントリー後にお送りする案内メールをご確認ください。
+          </div>
         </div>
-        <div class="faq-a">
-          もちろん可能です。参加者の約半数がおひとりでのエントリーです。組み合わせはこちらで調整しますので、当日は自然と仲間ができます。
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            キャンセルはできますか？
+            <span class="faq-arrow">+</span>
+          </div>
+          <div class="faq-a">
+            開催8日前まではキャンセル料なしでキャンセル可能です。7日前は参加費の50%、3日前以降は100%のキャンセル料が発生します。代わりの方を連れてくる場合はキャンセル料なしで対応できる場合があります。
+          </div>
         </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          クラブやカートのレンタルはありますか？
-          <span class="faq-arrow">+</span>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            当日の服装について教えてください
+            <span class="faq-arrow">+</span>
+          </div>
+          <div class="faq-a">
+            ゴルフ場のドレスコードに準拠してください。ポロシャツ・ゴルフパンツ・ゴルフシューズが基本です。ジーンズ・Tシャツ・スニーカーはご遠慮ください。帽子は必須です。
+          </div>
         </div>
-        <div class="faq-a">
-          クラブのレンタルはゴルフ場にてご用意があります（別途費用）。カートは参加費に含まれています。詳細はエントリー後にお送りする案内メールをご確認ください。
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          キャンセルはできますか？
-          <span class="faq-arrow">+</span>
-        </div>
-        <div class="faq-a">
-          開催8日前まではキャンセル料なしでキャンセル可能です。7日前は参加費の50%、3日前以降は100%のキャンセル料が発生します。代わりの方を連れてくる場合はキャンセル料なしで対応できる場合があります。
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          当日の服装について教えてください
-          <span class="faq-arrow">+</span>
-        </div>
-        <div class="faq-a">
-          ゴルフ場のドレスコードに準拠してください。ポロシャツ・ゴルフパンツ・ゴルフシューズが基本です。ジーンズ・Tシャツ・スニーカーはご遠慮ください。帽子は必須です。
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          アクセス方法を教えてください
-          <span class="faq-arrow">+</span>
-        </div>
-        <div class="faq-a">
-          送迎が必要な場合、エントリーにメッセージを書いてください。可能な限り調整します。公共交通機関をご利用の場合は、最寄り駅からのタクシーやシャトルバスの利用が便利です。詳細はエントリー後にお送りする案内メールでご案内します。
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            アクセス方法を教えてください
+            <span class="faq-arrow">+</span>
+          </div>
+          <div class="faq-a">
+            送迎が必要な場合、エントリーにメッセージを書いてください。可能な限り調整します。公共交通機関をご利用の場合は、最寄り駅からのタクシーやシャトルバスの利用が便利です。詳細はエントリー後にお送りする案内メールでご案内します。
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">SPRING <em>LINKS</em> GOLF CUP</div>
-  <p style="font-size:0.8rem; color:var(--gray); font-weight:300; margin-bottom:1rem;">
-    春のゴルフコンペ ─ 同世代と繋がる、新しいゴルフの楽しみ方
-  </p>
-  <ul class="footer-links">
-    <li><a href="#about">ABOUT</a></li>
-    <li><a href="#schedule">SCHEDULE</a></li>
-    <li><a href="#prize">PRIZE</a></li>
-    <li><a href="#entry">ENTRY</a></li>
-    <li><a href="#faq">FAQ</a></li>
-  </ul>
-  <p class="footer-copy">お問い合わせ：jordanliujunlong@gmail.com</p>
-  <p class="footer-copy" style="margin-top:0.5rem;">© 2026 Spring Links Golf Cup. All rights reserved.</p>
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">SPRING <em>LINKS</em> GOLF CUP</div>
+    <p style="font-size:0.8rem; color:var(--gray); font-weight:300; margin-bottom:1rem;">
+      春のゴルフコンペ ─ 仲間と繋がる、新しいゴルフの楽しみ方
+    </p>
+    <ul class="footer-links">
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#schedule">SCHEDULE</a></li>
+      <li><a href="#prize">PRIZE</a></li>
+      <li><a href="#entry">ENTRY</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <p class="footer-copy">お問い合わせ：jordanliujunlong@gmail.com</p>
+    <p class="footer-copy" style="margin-top:0.5rem;">© 2026 Spring Links Golf Cup. All rights reserved.</p>
+  </footer>
 
-<script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 80);
-        observer.unobserve(e.target);
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // FAQ toggle
+    function toggleFaq(el) {
+      const answer = el.nextElementSibling;
+      const isOpen = answer.classList.contains('open');
+      document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+      document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('open'));
+      if (!isOpen) {
+        answer.classList.add('open');
+        el.classList.add('open');
       }
+    }
+
+    // Form submit with EmailJS
+    async function handleSubmit() {
+      const btn = document.querySelector('.form-submit .btn-primary');
+
+      // 必須項目バリデーション
+      const name  = document.getElementById('f_name').value.trim();
+      const wechat = document.getElementById('f_wechat').value.trim();
+      const age   = document.getElementById('f_age').value;
+      const email = document.getElementById('f_email').value.trim();
+      const tel   = document.getElementById('f_tel').value.trim();
+
+      if (!name || !age || !email || !tel) {
+        alert('お名前・年齢・メールアドレス・電話番号は必須項目です。');
+        return;
+      }
+
+      // メール形式チェック
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert('メールアドレスの形式が正しくありません。');
+        return;
+      }
+
+      // 送信中表示
+      btn.textContent = '送信中...';
+      btn.style.opacity = '0.7';
+      btn.disabled = true;
+
+      const templateParams = {
+        name:    name,
+        age:     age,
+        email:   email,
+        tel:     tel,
+        wechat:  wechat || '未回答',
+        career:  document.getElementById('f_career').value || '未回答',
+        score:   document.getElementById('f_score').value  || '未回答',
+        note:    document.getElementById('f_note').value.trim() || 'なし',
+      };
+
+      try {
+        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+        btn.textContent = '✓ エントリー完了！';
+        btn.style.background = 'linear-gradient(135deg, #1a6b3a, #2d9e57)';
+        btn.style.opacity = '1';
+        // フォームをリセット
+        ['f_name','f_email','f_tel','f_note'].forEach(id => document.getElementById(id).value = '');
+        ['f_age','f_career','f_score'].forEach(id => document.getElementById(id).selectedIndex = 0);
+      } catch (err) {
+        console.error('EmailJS error:', err);
+        btn.textContent = '送信失敗 ─ 再度お試しください';
+        btn.style.background = 'linear-gradient(135deg, #8b0000, #c0392b)';
+        btn.style.opacity = '1';
+        btn.disabled = false;
+      }
+    }
+
+
+    // Nav scroll effect
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      nav.style.background = window.scrollY > 50
+        ? 'rgba(13,26,17,0.95)'
+        : 'rgba(13,26,17,0.8)';
     });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
-
-  // FAQ toggle
-  function toggleFaq(el) {
-    const answer = el.nextElementSibling;
-    const isOpen = answer.classList.contains('open');
-    document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
-    document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('open'));
-    if (!isOpen) {
-      answer.classList.add('open');
-      el.classList.add('open');
-    }
-  }
-
-  // Form submit with EmailJS
-  async function handleSubmit() {
-    const btn = document.querySelector('.form-submit .btn-primary');
-
-    // 必須項目バリデーション
-    const name  = document.getElementById('f_name').value.trim();
-    const wechat = document.getElementById('f_wechat').value.trim();
-    const age   = document.getElementById('f_age').value;
-    const email = document.getElementById('f_email').value.trim();
-    const tel   = document.getElementById('f_tel').value.trim();
-
-    if (!name || !age || !email || !tel) {
-      alert('お名前・年齢・メールアドレス・電話番号は必須項目です。');
-      return;
-    }
-
-    // メール形式チェック
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      alert('メールアドレスの形式が正しくありません。');
-      return;
-    }
-
-    // 送信中表示
-    btn.textContent = '送信中...';
-    btn.style.opacity = '0.7';
-    btn.disabled = true;
-
-    const templateParams = {
-      name:    name,
-      age:     age,
-      email:   email,
-      tel:     tel,
-      wechat:  wechat || '未回答',
-      career:  document.getElementById('f_career').value || '未回答',
-      score:   document.getElementById('f_score').value  || '未回答',
-      note:    document.getElementById('f_note').value.trim() || 'なし',
-    };
-
-    try {
-      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
-      btn.textContent = '✓ エントリー完了！';
-      btn.style.background = 'linear-gradient(135deg, #1a6b3a, #2d9e57)';
-      btn.style.opacity = '1';
-      // フォームをリセット
-      ['f_name','f_email','f_tel','f_note'].forEach(id => document.getElementById(id).value = '');
-      ['f_age','f_career','f_score'].forEach(id => document.getElementById(id).selectedIndex = 0);
-    } catch (err) {
-      console.error('EmailJS error:', err);
-      btn.textContent = '送信失敗 ─ 再度お試しください';
-      btn.style.background = 'linear-gradient(135deg, #8b0000, #c0392b)';
-      btn.style.opacity = '1';
-      btn.disabled = false;
-    }
-  }
-
-
-  // Nav scroll effect
-  window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    nav.style.background = window.scrollY > 50
-      ? 'rgba(13,26,17,0.95)'
-      : 'rgba(13,26,17,0.8)';
-  });
-</script>
-</body>
-</html>
+  </script>
+  </body>
+  </html>
