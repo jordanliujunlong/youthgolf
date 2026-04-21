@@ -1275,8 +1275,8 @@
         btn.style.background = 'linear-gradient(135deg, #1a6b3a, #2d9e57)';
         btn.style.opacity = '1';
         // フォームをリセット
-        ['f_name','f_email','f_tel','f_note'].forEach(id => document.getElementById(id).value = '');
-        ['f_age','f_career','f_score'].forEach(id => document.getElementById(id).selectedIndex = 0);
+        ['f_name','f_tel'].forEach(id => document.getElementById(id).value = '');
+        ['f_career','f_score'].forEach(id => document.getElementById(id).selectedIndex = 0);
       } catch (err) {
         console.error('EmailJS error:', err);
         btn.textContent = '送信失敗 ─ 再度お試しください';
