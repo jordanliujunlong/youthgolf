@@ -801,7 +801,67 @@
       transform: translateY(0);
     }
 
-    /* ── RESPONSIVE ── */
+    /* ── POLICY CHECKBOX ── */
+  .policy-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-top: 1.8rem;
+    padding: 1.2rem 1.5rem;
+    border: 1px solid rgba(78,203,113,0.25);
+    background: rgba(26,107,58,0.08);
+    border-radius: 3px;
+  }
+
+  .policy-wrap input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border: 2px solid var(--green-bright);
+    border-radius: 3px;
+    background: transparent;
+    cursor: pointer;
+    margin-top: 1px;
+    position: relative;
+    transition: background 0.2s;
+  }
+
+  .policy-wrap input[type="checkbox"]:checked {
+    background: var(--green-bright);
+  }
+
+  .policy-wrap input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--dark);
+    font-size: 13px;
+    font-weight: 900;
+  }
+
+  .policy-wrap label {
+    font-size: 0.85rem;
+    color: rgba(245,240,232,0.8);
+    font-weight: 300;
+    line-height: 1.7;
+    cursor: pointer;
+  }
+
+  .policy-wrap label a {
+    color: var(--gold-light);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s;
+  }
+
+  .policy-wrap label a:hover {
+    color: var(--gold);
+  }
+
+  /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
@@ -1111,6 +1171,14 @@
         </div>
       </div>
 
+      <div class="policy-wrap reveal">
+        <input type="checkbox" id="f_policy" checked>
+        <label for="f_policy">
+          <a href="golf_competition_policy.pdf" target="_blank">ゴルフコンペ開催規約</a>を読み、内容に同意します。<br>
+          <span style="font-size:0.78rem; color:var(--gray);">※ エントリーには規約への同意が必要です。</span>
+        </label>
+      </div>
+
       <div class="form-submit reveal">
         <button class="btn-primary" style="font-size:1rem; padding:1.2rem 4rem;" onclick="handleSubmit()">
           エントリーを確定する →
@@ -1242,8 +1310,15 @@
       const email = 'test@test.com';
       const tel   = document.getElementById('f_tel').value.trim();
 
-      if (!name || !age || !email || !tel) {
+      if (!name || !tel) {
         alert('お名前・電話番号は必須項目です。');
+        return;
+      }
+
+      // ポリシー同意チェック
+      const policy = document.getElementById('f_policy');
+      if (!policy.checked) {
+        alert('ゴルフコンペ開催規約に同意してください。');
         return;
       }
 
